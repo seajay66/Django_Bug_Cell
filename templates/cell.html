@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a href="/add">添加手机信息</a>
+</div>
+<table border="2">
+    <thead>
+    <tr>
+        <td>
+            型号
+        </td>
+        <td>
+            屏幕大小
+        </td>
+        <td>
+            生产厂家
+        </td>
+        <td>
+            操作
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in cell_list %}
+    <tr>
+        <td>
+            {{ row.xinghao }}
+        </td>
+        <td>
+            {{ row.pingmudaxiao }}
+        </td>
+
+        <td>
+            {{ row.m.CEO }}
+        </td>
+    <td>
+        <a href="/delete_ce?nid={{ row.id }}">删除</a>
+        |
+        <a href="/edit_ce">编辑</a>
+    </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

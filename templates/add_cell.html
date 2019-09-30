@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/add/" method="post">
+<table border="1">
+    <thead>
+    <tr>
+        <td>
+            型号
+        </td>
+        <td>
+            屏幕大小
+        </td>
+        <td>
+            所属生产厂家
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <input type="text" name="new_cell_name">
+        </td>
+        <td>
+            <input type="text" name="new_cell_screensizi">
+        </td>
+        <td>
+            <select name="new_CEO" >
+                {% for item in obj %}
+                    <option value="{{item.CEO}} ">{{ item.CEO }}</option>
+                {% endfor %}
+
+            </select>
+        </td>
+    </tr>
+    </tbody>
+</table>
+    <input type="submit">
+</form>
+</body>
+</html>
