@@ -21,7 +21,12 @@ def add(request):
         ceo111 = request.POST.get("new_CEO")
         niddd=request.POST.get("name")
         print("检测",ceo111,type(ceo111))
-        new_id = Industry.objects.filter(CEO=ceo111).first().id
+        eee = "雷军"
+        print(type(eee))
+        new_id = Industry.objects.filter(CEO=eee).first().id
+        print(new_id)
+        ceo=ceo111
+        # new_id = Industry.objects.filter(CEO=ceo).first().id # 报错说，无id属性
         new_id_2 = Industry.objects.filter()
 
         # print(new_id,type(new_id))
