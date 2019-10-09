@@ -31,7 +31,9 @@
         <td>
             <select name="new_CEO" >
                 {% for item in obj %}
-                    <option value="{{item.CEO}} ">{{ item.CEO }}</option>
+                    <option name="{{item.id}} ">{{ item.CEO }}</option>
+{#                    注意 不能像下面这样写 不然会出现传参添加到数据库时找不到ID属性的报错#}
+{#                    <option value="{{item.id}} ">{{ item.CEO }}</option>#}
                 {% endfor %}
 
             </select>

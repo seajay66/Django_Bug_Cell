@@ -21,4 +21,5 @@ urlpatterns = [
     path('cellphone/', views.cellphone),
     path('add/', views.add),
     path('delete_ce/', views.delete_ce),
+    path('edit/', views.edit),
 ]

@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb1a6a48-13f8-4fae-a550-85119f29d5a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shu/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shu/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_cell.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_cell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cell.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tese_seajay/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tese_seajay/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,22 +106,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@15be8c36" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@15be8c36" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@74664362" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@15be8c36" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@4fddc6f1" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -133,8 +122,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569808665388</updated>
-      <workItem from="1569808668410" duration="15906000" />
+      <workItem from="1569808668410" duration="16125000" />
+      <workItem from="1569833806497" duration="72000" />
+      <workItem from="1570511747073" duration="99000" />
+      <workItem from="1570590428529" duration="297000" />
+      <workItem from="1570593391810" duration="5838000" />
+      <workItem from="1570603723727" duration="1763000" />
     </task>
+    <task id="LOCAL-00001" summary="[2019-09-30]">
+      <created>1569833463561</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569833463561</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,10 +147,16 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[2019-09-30]" />
+    <option name="LAST_COMMIT_MESSAGE" value="[2019-09-30]" />
   </component>
 </project>

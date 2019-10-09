@@ -4,7 +4,7 @@ from django.db import models
 class Cellphone(models.Model):
     xinghao = models.CharField(max_length=32)
     pingmudaxiao = models.IntegerField()
-    m = models.ForeignKey("Industry", on_delete=False, related_name="m_id")
+    m = models.ForeignKey("Industry", on_delete=False)
 
 class Industry(models.Model):
     name = models.CharField(max_length=32)

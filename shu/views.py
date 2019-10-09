@@ -15,28 +15,37 @@ def add(request):
         obj = Industry.objects.all()
         return render(request,"add_cell.html",locals())
     elif request.method == "POST":
-        obj = Industry.objects.all()
         name = request.POST.get("new_cell_name")
         pingmudaxiao = request.POST.get("new_cell_screensizi")
-        ceo111 = request.POST.get("new_CEO")
-        niddd=request.POST.get("name")
-        print("检测",ceo111,type(ceo111))
-        eee = "雷军"
-        print(type(eee))
-        new_id = Industry.objects.filter(CEO=eee).first().id
-        print(new_id)
-        ceo=ceo111
+        ceo1 = request.POST.get("new_CEO")
+        print("拿到的ceo1是：",ceo1)
+        new_id = Industry.objects.filter(CEO=ceo1).first().id
         # new_id = Industry.objects.filter(CEO=ceo).first().id # 报错说，无id属性
-        new_id_2 = Industry.objects.filter()
-
-        # print(new_id,type(new_id))
-        # print(new_id_2,type(new_id_2))
-        # print(new_id_2,type(new_id))
-
-
+        #经查 上述问题的原因竟然是因为：HTML中option属性不能用value 应该用name传到后台来才行
+        #但还是无法理解为何传回来的 也是字符串属性打印输出也没问题就是传参出错。。。
         Cellphone.objects.create(xinghao=name,pingmudaxiao=pingmudaxiao, m_id=new_id)
         return redirect("/cellphone")
 def delete_ce(request):
     nid = request.GET.get("nid")
     Cellphone.objects.filter(id=nid).delete()
     return redirect("/cellphone")
+def edit(request):
+    if request.method == "GET":
+        nid = request.GET.get("nid")
+        edit_item = Cellphone.objects.filter(id=nid).first()
+        industry_obj = Industry.objects.all()
+        return render(request,"edit.html",locals())
+    elif request.method == "POST":
+        nid = request.GET.get("nid")
+        edit_item = Cellphone.objects.filter(id=nid).first()
+        industry_obj = Industry.objects.all()
+        xh = request.POST.get("xinghao")
+        pmdx = request.POST.get("pingmudaxiao")
+        xuanze = request.POST.get("xuanze")
+
+        #new_id = Industry.objects.filter(CEO=ceo1).first().id
+        print(xuanze)
+        new_id = Industry.objects.filter(CEO=xuanze).first().id
+        print(nid,xh,pmdx)
+        Cellphone.objects.filter(id=nid).update(xinghao=xh,pingmudaxiao=pmdx,m_id=new_id)
+        return redirect("/cellphone")

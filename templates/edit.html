@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改手机信息</title>
+</head>
+<body>
+<form action="/edit/?nid={{ edit_item.id }}" method="post">
+<table border="1">
+    <thead>
+    <tr>
+        <td>
+            型号
+        </td>
+        <td>
+            屏幕大小
+        </td>
+        <td>
+            生产厂家
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <input type="text" name="xinghao" value="{{ edit_item.xinghao }}">
+        </td>
+        <td>
+            <input type="text" name="pingmudaxiao" value="{{ edit_item.pingmudaxiao }}">
+        </td>
+        <td>
+            <select name="xuanze" >
+                {% for item in  industry_obj %}
+                    {% if item.CEO == edit_item.m.CEO  %}
+                    <option name="{{ item.id }}" selected >{{ item.CEO }}</option>
+                    {% else %}
+                    <option name="{{ item.id }}">{{ item.CEO }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </td>
+    </tr>
+    </tbody>
+</table>
+    <input type="submit">
+</form>
+</body>
+</html>
