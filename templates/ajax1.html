@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn{
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: darkgoldenrod;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="text" placeholder="用户名" id="username">
+    <input type="password" placeholder="密码" id="password">
+    <div class="btn" onclick="submitForm();">提交</div>
+    <div><p id="bq"></p></div>
+    <script src="/static/jquery.min.js"></script>
+    <script>
+        function submitForm() {
+            var u = $('#username').val();
+            var p = $('#password').val();
+            $.ajax({
+                url:'/ajax2',
+                type:'GET',
+                data:{username:u,password:p},
+                success:function(arg) {
+                    $("#bq").html(arg);
+                    window.location.reload();
+                    console.log(arg);
+                }
+            })
+            
+        }
+    </script>
+</div>
+</body>
+</html>

@@ -22,4 +22,8 @@ urlpatterns = [
     path('add/', views.add),
     path('delete_ce/', views.delete_ce),
     path('edit/', views.edit),
+    path('ajax1/', views.ajax1),
+    path('ajax2/', views.ajax2),
+    path('index.html/', views.index),
+    path('index1.html/', views.index1),
 ]
