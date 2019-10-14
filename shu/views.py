@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,HttpResponse
 from shu.models import Industry, Cellphone
 import time
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
+from shu.pager import Pagination
 # Create your views here.
 def cellphone(request):
     # models.Cellphone.objects.create(xinghao="小米8",pingmudaxiao=5,m_id=1)
@@ -90,6 +91,28 @@ def index(request):
     # return render(request,'index.html',{'user_list':data,'prev_page':prev_page,'next_page':next_page)
     # return HttpResponse('ok')
     return render(request,'index.html',{'user_list':data,'prev_page':prev_page,'next_page':next_page})
+# 自己创建一个类 继承Paginator,来实现上一页下一页中间的页面的效果；
+# 这样以后可以直接用自己写的这个继承django提供的这个即可。
+class CustomPaginitor(Paginator):
+    def __init__(self,current_page,per_page_number,*args,**kwargs):
+        # 代指当前页
+        self.current_page = int(current_page)
+        # 代指最多显示页码的数量
+        self.per_page_number = int(per_page_number)
+        super(CustomPaginitor, self).__init__(*args,**kwargs)
+    def pager_num_range(self):
+        # 总页数 self.per_pager_num
+        if self.num_pages < self.per_page_number:
+            return range(1,self.num_pages+1)
+        # 总页数特别多的时候
+        part = int(self.per_page_number/2)
+        if int(self.current_page) <= part:
+            return range(1,self.per_page_number+1)
+        if self.current_page+part >self.num_pages:
+            return range(self.num_pages-self.per_page_number,self.num_pages+1)
+        return range(int(self.current_page)-part,int(self.current_page)+part+1)
+        # return range(1,12)
+
 def index1(request):
     #这是利用django的内置分页工具
     #共计Paginator对象和Page两个对象。
@@ -97,13 +120,14 @@ def index1(request):
     # 已经引入了django自带分页的类 所以要先创建一个 对象
     # 拿到了所有数据  -->  得出共有多少条数据
     # 每页10条的话 总共有多少页 也就能够计算出来
-    current_page = request.GET.get('p')
     # per_page: 每页显示条目数量
     # count:    数据总个数
     # num_pages:总页数
     # page_range:总页数的索引范围，如: (1,10),(1,200)
     # page:     page对象（是否具有下一页；是否有上一页；）
-    paginator = Paginator(USER_LIST,10)
+    current_page = request.GET.get('p')
+    # Paginator对象
+    paginator = CustomPaginitor(current_page,11,USER_LIST,10)
     try:
         # Page对象
         posts = paginator.page(current_page)
@@ -119,3 +143,9 @@ def index1(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
     return render(request,"index1.html",{'posts':posts})
+def index2(request):
+    current_page = request.GET.get("p")
+    obj = Pagination(999,current_page)
+
+    data_list = USER_LIST[10:20]
+    return render(request,"index2.html")
