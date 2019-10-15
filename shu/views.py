@@ -145,7 +145,6 @@ def index1(request):
     return render(request,"index1.html",{'posts':posts})
 def index2(request):
     current_page = request.GET.get("p")
-    obj = Pagination(999,current_page)
-
-    data_list = USER_LIST[10:20]
-    return render(request,"index2.html")
+    page_obj = Pagination(999,current_page)
+    data_list = USER_LIST[page_obj.start():page_obj.end()]
+    return render(request,"index2.html",{'data_list':data_list,'page_obj':page_obj})

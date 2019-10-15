@@ -26,4 +26,5 @@ urlpatterns = [
     path('ajax2/', views.ajax2),
     path('index.html/', views.index),
     path('index1.html/', views.index1),
+    path('index2.html/', views.index2),
 ]

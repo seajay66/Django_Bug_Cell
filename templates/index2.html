@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 <ul>
-    {% for row in posts.object_list %}
+    {% for row in data_list %}
         <li>{{ row.name }} {{ row.age }}</li>
     {% endfor %}
-{% include 'include/pager.html' %}
+{#{% include 'include/pager.html' %}#}
+</ul>
+<ul class="pagination">
+        {{ page_obj.page_str|safe }}
+</ul>
 </body>
 </html>
