@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/f2.html" method="post">
+<input type="text" name="user">
+<input type="text" name="pwd">
+<input type="text" name="age">
+<input type="text" name="email">
+<input type="submit" value="提交" >
+<input type="submit" value="Ajax提交" onclick="submitAjaxForm();">
+</form>
+<script src="/static/jquery.min.js"></script>
+<script>
+    function submitAjaxForm(){
+        $.ajax({
+            url:'/f1.html',
+            type:'POST',
+            data:$('#fm').serialize(),
+            success:function(arg){
+                console.log(arg);
+            }
+        })
+    }
+</script>
+</body>
+</html>
