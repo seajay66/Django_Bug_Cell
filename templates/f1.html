@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/f2.html" method="post">
+<form id="fm" action="/f1.html/" method="post">
 <input type="text" name="user">
 <input type="text" name="pwd">
 <input type="text" name="age">
@@ -15,9 +15,10 @@
 </form>
 <script src="/static/jquery.min.js"></script>
 <script>
+
     function submitAjaxForm(){
         $.ajax({
-            url:'/f1.html',
+            url:'/f1.html/', {#    urs的 末尾的斜杠不能少 不然会报错   #}
             type:'POST',
             data:$('#fm').serialize(),
             success:function(arg){

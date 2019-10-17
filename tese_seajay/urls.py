@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from shu import views
 from shu2 import views as v2
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cellphone/', views.cellphone),
@@ -29,4 +30,5 @@ urlpatterns = [
     path('index1.html/', views.index1),
     path('index2.html/', views.index2),
     path('f1.html/', v2.f1),
+
 ]
