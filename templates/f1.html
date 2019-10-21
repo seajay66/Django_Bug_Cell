@@ -5,27 +5,32 @@
     <title>Title</title>
 </head>
 <body>
+{#    可能为多个错误 但并不用都给用户显示出来 所以取列表第一个即可 所以为.0#}
 <form id="fm" action="/f1.html/" method="post">
-<input type="text" name="user">
-<input type="text" name="pwd">
-<input type="text" name="age">
-<input type="text" name="email">
+{#<p><input type="text" name="user" placeholder="user">{{ obj.errors.user.0 }}</p>#}
+{#<p><input type="text" name="pwd" placeholder="pwd">{{ obj.errors.pwd.0 }}</p>#}
+{#<p><input type="text" name="age" placeholder="age">{{ obj.errors.age.0 }}</p>#}
+{#<p><input type="text" name="email" placeholder="email">{{ obj.errors.email.0 }}</p>#}
+<p>{{ obj.user }}后端传入了obj对象，自带这个属性 所以直接user一下就行 {{ obj.errors.user.0 }}</p>
+<p>{{ obj.pwd }}     {{ obj.errors.pwd.0 }}</p>
+<p><{{ obj.age }}    {{ obj.errors.age.0 }}</p>
+<p>{{ obj.email }}   {{ obj.errors.email.0 }}</p>
 <input type="submit" value="提交" >
-<input type="submit" value="Ajax提交" onclick="submitAjaxForm();">
+{#<input type="submit" value="Ajax提交" onclick="submitAjaxForm();">#}
 </form>
 <script src="/static/jquery.min.js"></script>
-<script>
-
-    function submitAjaxForm(){
-        $.ajax({
-            url:'/f1.html/', {#    urs的 末尾的斜杠不能少 不然会报错   #}
-            type:'POST',
-            data:$('#fm').serialize(),
-            success:function(arg){
-                console.log(arg);
-            }
-        })
-    }
-</script>
+{#<script>#}
+{##}
+{#    function submitAjaxForm(){#}
+{#        $.ajax({#}
+{#            url:'/f1.html/', {#    urs的 末尾的斜杠不能少 不然会报错   #}
+{#            type:'POST',#}
+{#            data:$('#fm').serialize(),#}
+{#            success:function(arg){#}
+{#                console.log(arg);#}
+{#            }#}
+{#        })#}
+{#    }#}
+{#</script>#}
 </body>
 </html>
