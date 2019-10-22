@@ -14,3 +14,9 @@ class Industry(models.Model):
 class Gongyingshang(models.Model):
     title = models.CharField(max_length=32)
     provide_item = models.CharField(max_length=32)
+
+
+
+class gongyingnew(models.Model):
+    title = models.CharField(max_length=32)
+    provide_item = models.CharField(max_length=32)

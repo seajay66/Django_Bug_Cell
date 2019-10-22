@@ -10,10 +10,11 @@
 {#<p><input type="text" name="user" placeholder="user">{{ obj.errors.user.0 }}</p>#}
 {#<p><input type="text" name="pwd" placeholder="pwd">{{ obj.errors.pwd.0 }}</p>#}
 {#<p><input type="text" name="age" placeholder="age">{{ obj.errors.age.0 }}</p>#}
+{#    后端传入了obj对象，自带这个属性 所以直接user一下就行#}
 {#<p><input type="text" name="email" placeholder="email">{{ obj.errors.email.0 }}</p>#}
-<p>{{ obj.user }}后端传入了obj对象，自带这个属性 所以直接user一下就行 {{ obj.errors.user.0 }}</p>
+<p>{{ obj.user }} {{ obj.errors.user.0 }}</p>
 <p>{{ obj.pwd }}     {{ obj.errors.pwd.0 }}</p>
-<p><{{ obj.age }}    {{ obj.errors.age.0 }}</p>
+<p>{{ obj.age }}    {{ obj.errors.age.0 }}</p>
 <p>{{ obj.email }}   {{ obj.errors.email.0 }}</p>
 <input type="submit" value="提交" >
 {#<input type="submit" value="Ajax提交" onclick="submitAjaxForm();">#}

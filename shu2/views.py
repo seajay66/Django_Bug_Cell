@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse,redirect
-
+from shu2 import models
 
 #用下面语句 进行验证用户提供的信息
 from django import forms
@@ -56,4 +56,23 @@ def f1(request):
             print(obj.errors)
             print("验证失败")
         return render(request,"f1.html",{'obj':obj})
-# 视频教程在24分钟了
+
+def users(request):
+    user_list = models.UserInfo.objects.all()
+    return render(request,'uers.html',locals())
+
+
+from shu2.forms import UserForm
+def add_user(request):
+    if request.method =="GET":
+        obj = UserForm()
+        return render(request,'add_user.html',{'obj':obj})
+    else:
+        obj = UserForm(request.POST)
+        if obj.is_valid():
+            print(obj.cleaned_data)
+            # 注意 下面这行 为快捷将用户输入的数据存入数据库的方法  **obj
+            models.UserInfo.objects.create(**obj.cleaned_data)
+            return redirect('/users/')
+        else:
+            return render(request, 'add_user.html', {'obj': obj})

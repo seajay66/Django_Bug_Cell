@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{#如果想不要谷歌帮忙解析报错 强制提交 让程序来报错的话 需要在下面这里加上一个novalidate#}
+<form action="/add_user/" method="post" novalidate>
+   <p> {{ obj.username }}{{ obj.errors.username.0 }}</p>
+   <p> {{ obj.email }}{{ obj.errors.email.0 }}</p>
+    <input type="submit">
+</form>
+</body>
+</html>
