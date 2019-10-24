@@ -76,3 +76,16 @@ def add_user(request):
             return redirect('/users/')
         else:
             return render(request, 'add_user.html', {'obj': obj})
+def edit_user(request,nid):
+    if request.method == 'GET':
+        # nid = request.GET.get('nid')
+        data = models.UserInfo.objects.filter(id=nid).first()
+        obj = UserForm({'username':data.username,'email':data.email})
+        return render(request,'edit_user.html',{'obj':obj,'nid':nid})
+    else:
+        obj = UserForm(request.POST)
+        if obj.is_valid():
+            models.UserInfo.objects.filter(id=nid).update(**obj.cleaned_data)
+            return redirect('/users/')
+        else:
+            return render(request, 'edit_user.html', {'obj': obj, 'nid': nid})
