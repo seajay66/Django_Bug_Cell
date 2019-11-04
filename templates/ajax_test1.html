@@ -15,18 +15,41 @@
 </head>
 <body>
 <h1>Ajax全套</h1>
-<h3>jQuery Ajax 发GET请求</h3>
+<h3>jQuery Ajax与原生    发GET请求</h3>
 <div>
     <a class="btn" onclick="AjaxSubmit1();">点我1</a>
     <a class="btn" onclick="AjaxSubmit2();">点我2</a>
 </div>
-<h3>jQuery Ajax 发POST请求</h3>
+<h3>jQuery Ajax与原生 发POST请求</h3>
 <div>
     <a class="btn" onclick="AjaxSubmit3();">点我3</a>
     <a class="btn" onclick="AjaxSubmit4();">点我4</a>
 </div>
+<h3>Iframe标签+Form 伪造Ajax请求</h3>
+<div>
+   <div>
+{#       <h6>学习iframe</h6>#}
+{#       <div> <input id="url" placeholder="请输入URL"><a onclick="Test1();">查看</a>#}
+{#       </div>#}
+{##}
+{#       <iframe id="iframe" style="height: 800px;width: 600px;" src="http://www.autohome.com.cn" frameborder="0"></iframe>#}
+       
+       <h6>基于iframe+Form表单</h6>
+       <iframe id="iframe" name="ifra" ></iframe>
+       <form id="fm" action="/ajax_test2.html/" method="post" target="ifra" >
+           <input name="root" value="11111">
+           <input type="submit" name="提交">
+{#           <a onclick="AjaxSubmit5();"></a>#}
+       </form>
+   </div>
+</div>
 <script src="/static/jquery.min.js"></script>
 <script>
+    function Test1() {
+        var url = $('#url').val();
+        $('#iframe').attr('src',url);
+
+    }
     //通过jQuery方式的Ajax方法 发送get请求
     function AjaxSubmit1() {
         $.ajax({
@@ -79,6 +102,9 @@
         xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset-UTF-8')
         //数据放在send里
         xhr.send('p=456')
+    }
+    function AjaxSubmit5() {
+        document.getElementById('fm').submit()
     }
 </script>
 </body>

@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb1a6a48-13f8-4fae-a550-85119f29d5a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/ajax_test1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/ajax_test2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/upload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tese_seajay/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tese_seajay/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tese_seajay/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tese_seajay/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajax_test/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ajax_test/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ajax_test1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ajax_test1.html" afterDir="false" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tese_seajay/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
+            <state relative-caret-position="600">
               <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
               <folding>
                 <element signature="e#635#667#0" expanded="true" />
@@ -73,8 +69,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ajax_test/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            <state relative-caret-position="180">
+              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,8 +81,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/ajax_test1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
+            <state relative-caret-position="301">
+              <caret line="47" column="8" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+              <folding>
+                <element signature="e#724#841#0#HTML" />
+                <element signature="e#922#1225#0#HTML" />
+                <element signature="e#1549#2060#0#HTML" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,8 +144,8 @@
         <option value="$PROJECT_DIR$/app03/views.py" />
         <option value="$PROJECT_DIR$/templates/ajax_test2.html" />
         <option value="$PROJECT_DIR$/tese_seajay/urls.py" />
-        <option value="$PROJECT_DIR$/ajax_test/views.py" />
         <option value="$PROJECT_DIR$/templates/ajax_test1.html" />
+        <option value="$PROJECT_DIR$/ajax_test/views.py" />
       </list>
     </option>
   </component>
@@ -159,6 +163,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,7 +189,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -340,7 +344,8 @@
       <workItem from="1572067690540" duration="496000" />
       <workItem from="1572245936592" duration="4254000" />
       <workItem from="1572415962265" duration="10000" />
-      <workItem from="1572837634778" duration="7101000" />
+      <workItem from="1572837634778" duration="8614000" />
+      <workItem from="1572860312219" duration="3060000" />
     </task>
     <task id="LOCAL-00001" summary="[2019-09-30]">
       <created>1569833463561</created>
@@ -405,16 +410,31 @@
       <option name="project" value="LOCAL" />
       <updated>1571889473774</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="[2019-10-24]Form提交数据库修改功能">
+      <created>1572851322904</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572851322904</updated>
+    </task>
+    <task id="LOCAL-00011" summary="[2019-11-04]Ajax与原生XMLHTTPrequest发送方式对比">
+      <created>1572853033265</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1572853033265</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62096000" />
+    <option name="totallyTimeSpent" value="66669000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="970" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27316293" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27582535" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -483,7 +503,8 @@
     <MESSAGE value="[2019-10-21]新增自定义Form验证与生成代码功能" />
     <MESSAGE value="[2019-10-22]Form表单添加功能-19分钟" />
     <MESSAGE value="[2019-10-24]Form提交数据库修改功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="[2019-10-24]Form提交数据库修改功能" />
+    <MESSAGE value="[2019-11-04]Ajax与原生XMLHTTPrequest发送方式对比" />
+    <option name="LAST_COMMIT_MESSAGE" value="[2019-11-04]Ajax与原生XMLHTTPrequest发送方式对比" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/templates/include/pager.html">
@@ -667,16 +688,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/ajax_test2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tese_seajay/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
+        <state relative-caret-position="600">
           <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding>
             <element signature="e#635#667#0" expanded="true" />
@@ -684,17 +698,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/ajax_test2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ajax_test/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        <state relative-caret-position="180">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/ajax_test1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
+        <state relative-caret-position="301">
+          <caret line="47" column="8" lean-forward="true" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+          <folding>
+            <element signature="e#724#841#0#HTML" />
+            <element signature="e#922#1225#0#HTML" />
+            <element signature="e#1549#2060#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>
