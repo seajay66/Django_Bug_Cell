@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn{
+            display: inline-block;
+            padding: 5px 10px;
+            color: white;
+            background-color: coral;
+
+        }
+    </style>
+</head>
+<body>
+<h1>Ajax全套</h1>
+<h3>jQuery Ajax 发GET请求</h3>
+<div>
+    <a class="btn" onclick="AjaxSubmit1();">点我1</a>
+    <a class="btn" onclick="AjaxSubmit2();">点我2</a>
+</div>
+<h3>jQuery Ajax 发POST请求</h3>
+<div>
+    <a class="btn" onclick="AjaxSubmit3();">点我3</a>
+    <a class="btn" onclick="AjaxSubmit4();">点我4</a>
+
+<script src="/static/jquery.min.js"></script>
+<script>
+    //通过jQuery方式的Ajax方法 发送get请求
+    function AjaxSubmit1() {
+        $.ajax({
+        url:'/ajax_test2.html',
+        type:'GET',
+        data:{'p':123},
+        success:function(arg) {
+
+	}
+	
+})
+    }
+    // 原生方式发送ajax的方法 XMLHTTPrequest对象 发送get请求
+    function AjaxSubmit2() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+           if (xhr.readyState == 4) {
+               //接受完毕服务器返回的数据
+               console.log(xhr.responseText);
+           }
+        };
+        xhr.open('GET','/ajax_test2.html?p=123');
+        xhr.send(null)
+    }
+    //通过jQuery方式的Ajax方法 发送post请求
+    function AjaxSubmit3() {
+        $.ajax({
+// 注意下面的html后面必须带上链接结尾的'/' 不然会报错，只有post中才会这样。
+        url:'/ajax_test2.html/',
+        type:'POST',
+        data:{'p':123},
+        success:function(arg) {
+
+	}
+
+})
+    }
+    // 原生方式发送ajax的方法 XMLHTTPrequest对象 发送post请求
+    function AjaxSubmit4() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+           if (xhr.readyState == 4) {
+               //接受完毕服务器返回的数据
+               console.log(xhr.responseText);
+           }
+        };
+        // 注意下面的html后面必须带上链接结尾的'/' 不然会报错，只有post中才会这样。
+        xhr.open('POST','/ajax_test2.html/');
+        //必须设置请求头 不然django不会帮我们解析出数据返回
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset-UTF-8')
+        //数据放在send里
+        xhr.send('p=456')
+    }
+</script>
+</body>
+</html>

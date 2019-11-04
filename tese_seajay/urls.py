@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path,re_path
 from shu import views
 from shu2 import views as v2
-
+from app03 import views as a3
+from upload import views as upload
+from ajax_test import views as ajax1
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cellphone/', views.cellphone),
@@ -33,5 +35,9 @@ urlpatterns = [
     path('users/', v2.users),
     path('add_user/', v2.add_user),
     re_path('edit_user-(\d+)/', v2.edit_user),
+    path('test/', a3.test),
+    path('upload/', upload.upload),
+    path('ajax1.html/', ajax1.ajax_test1),
+    path('ajax_test2.html/', ajax1.ajax_test2),
 
 ]
