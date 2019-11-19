@@ -9,5 +9,5 @@ def ajax_test2(request):
     print(request.GET)
     print(request.POST)
     print(request.body)
-    ret = {'status':True,'message':'....'}
+    ret = {'status':True,'message':'要成功'}
     return HttpResponse(json.dumps(ret))

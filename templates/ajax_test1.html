@@ -35,7 +35,7 @@
 {#       <iframe id="iframe" style="height: 800px;width: 600px;" src="http://www.autohome.com.cn" frameborder="0"></iframe>#}
        
        <h6>基于iframe+Form表单</h6>
-       <iframe id="iframe" name="ifra" ></iframe>
+       <iframe id="iframe" name="ifra" onload="reloadIframe(this);"></iframe>
        <form id="fm" action="/ajax_test2.html/" method="post" target="ifra" >
            <input name="root" value="11111">
            <input type="submit" name="提交">
@@ -45,6 +45,10 @@
 </div>
 <script src="/static/jquery.min.js"></script>
 <script>
+    function reloadIframe(ths) {
+        console.log('asdfasf');
+        console.log(ths.contentWindow.document.body);
+    }
     function Test1() {
         var url = $('#url').val();
         $('#iframe').attr('src',url);
