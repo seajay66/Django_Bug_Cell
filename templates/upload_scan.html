@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<iframe id="iframe8" name="ifra8" style="display: none"></iframe></div>
+<form id="fm8" action="/upload_img.html/" method="post" enctype="multipart/form-data" target="ifra8">
+<input type="file" name="k3" onchange="unloadFile()">
+</form>
+
+<h3>预览</h3>
+<div id="preview">图片为何不显示</div>
+<script src="/static/jquery.min.js"></script>
+<script>
+    function unloadFile() {
+        {#给iframe绑定事件#}
+        document.getElementById('iframe8').onload = reloadIframe8;
+        document.getElementById('fm8').submit();
+    }
+    function reloadIframe8() {
+        var content = this.contentWindow.document.body.innerHTML;
+        {#var obj = JSON.parse(content); 接着想定义 想添加 想编辑 都可以操作了#}
+        var obj = JSON.parse(content);
+        console.log(obj.data);
+        var tag = document.createElement('img');
+        {#这里多次测试 无法成功加载图片预览 最后发现是路径少了最前面的一个斜杠，加上就能预览了#}
+        tag.src = '/'+ obj.data;
+        $('#preview').empty().append(tag);
+    }
+</script>
+</body>
+</html>

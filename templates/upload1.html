@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<iframe style="..." id="ifram1" name="ifra1" ></iframe>
+<form id="fm1" action="/upload/" method="post" enctype="multipart/form-data" target="ifra1">
+    <input type="file" name="k3">
+</form>
+利用formdata对象，来封装用户提交的数据
+<script>
+    function AjaxSubmit8() {
+        document.getElementById('iframe1').onload=reloadIframe1;
+        document.getElementById('fm1').submit();
+    }
+</script>
+</body>
+</html>

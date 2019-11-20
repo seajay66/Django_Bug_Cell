@@ -35,20 +35,33 @@
 {#       <iframe id="iframe" style="height: 800px;width: 600px;" src="http://www.autohome.com.cn" frameborder="0"></iframe>#}
        
        <h6>基于iframe+Form表单</h6>
-       <iframe id="iframe" name="ifra" onload="reloadIframe(this);"></iframe>
+{#       下面这个onload绑定时间 第一次运行的时候会报错 因为还没有加载就调用 不可以。所以需要改为后绑定#}
+{#       <iframe id="iframe" name="ifra" onload="reloadIframe(this);"></iframe>#}
+       <iframe id="iframe" name="ifra" ></iframe>
        <form id="fm" action="/ajax_test2.html/" method="post" target="ifra" >
            <input name="root" value="11111">
            <input type="submit" name="提交">
+{#           千万注意 onclick函数后面需要加括号才能绑定函数并运行#}
+           <a onclick="AjaxSubmit5()">提交我这个a标签</a>
 {#           <a onclick="AjaxSubmit5();"></a>#}
        </form>
    </div>
 </div>
+
+<h3>文件上传</h3>
+<input type="file" id="img" >
+<a class="btn" onclick="AjaxSubmit6()">上传</a>
+<a class="btn" onclick="AjaxSubmit7()">上传</a>
+<div>
+<iframe id="iframe8" name="ifra8" style="display: none"></iframe></div>
+<form id="fm8" action="/ajax_test2.html/" method="post" enctype="multipart/form-data" target="ifra8">
+<input type="text" name="k1">
+<input type="text" name="k2">
+<input type="file" name="k3">
+<div><a onclick="AjaxSubmit8()">第八个提交</a></div>
+</form>
 <script src="/static/jquery.min.js"></script>
 <script>
-    function reloadIframe(ths) {
-        console.log('asdfasf');
-        console.log(ths.contentWindow.document.body);
-    }
     function Test1() {
         var url = $('#url').val();
         $('#iframe').attr('src',url);
@@ -108,7 +121,65 @@
         xhr.send('p=456')
     }
     function AjaxSubmit5() {
-        document.getElementById('fm').submit()
+        {#给iframe绑定事件#}
+        document.getElementById('iframe').onload = reloadIframe;
+        document.getElementById('fm').submit();
+    }
+    function reloadIframe() {
+        {#console.log('asdfasf');#}
+        {#console.log(ths.contentWindow.document.body.innerHTML);#}
+        {#console.log("哈哈");#}
+        {#console.log($(ths).contents().find('body').html());#}
+        var content = this.contentWindow.document.body.innerHTML;
+        {#var obj = JSON.parse(content); 接着想定义 想添加 想编辑 都可以操作了#}
+        var obj = JSON.parse(content);
+        if(obj.status){
+            alert(obj.message);
+        }
+    }
+    function AjaxSubmit6() {
+        var data = new FormData();
+        data.append('k1','v1');
+        data.append('k2','v2');
+        data.append('k3',document.getElementById('img').files[0]);
+        $.ajax({
+            url:'/ajax_test2.html/',
+            type:'POST',
+            data: data,
+            success:function (arg) {
+                console.log(arg)
+            },
+            processData: false,
+            contentType: false,
+        })
+    }
+    function AjaxSubmit7() {
+        var data = new FormData();
+        data.append('k1','v1');
+        data.append('k2','v2');
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+           if (xhr.readyState == 4) {
+               //接受完毕服务器返回的数据
+               console.log(xhr.responseText);
+           }
+        };
+        xhr.open('POST','/ajax_test2.html/');
+        xhr.send(data)
+    }
+    function AjaxSubmit8() {
+        {#给iframe绑定事件#}
+        document.getElementById('iframe8').onload = reloadIframe8;
+        document.getElementById('fm8').submit();
+    }
+    function reloadIframe8() {
+        var content = this.contentWindow.document.body.innerHTML;
+        {#var obj = JSON.parse(content); 接着想定义 想添加 想编辑 都可以操作了#}
+        var obj = JSON.parse(content);
+        if(obj.status){
+            alert(obj.message);
+        }
+        console.log(obj)
     }
 </script>
 </body>
