@@ -33,3 +33,9 @@ def upload_img(request):
     f.close()
     ret['data']= file_path
     return HttpResponse(json.dumps(ret))
+
+def jsonp(request):
+    return render(request,'jsonp.html')
+
+def ajax3(request):
+    return HttpResponse('本服务器发送的请求')

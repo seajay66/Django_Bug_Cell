@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="content"></div>
+<input type="button" value="发送1" onclick="submitJsonp1()">
+<input type="button" value="发送2" onclick="submitJsonp2()">
+<script src="/static/jquery.min.js"></script>
+<script>
+    function submitJsonp1() {
+        $.ajax({
+            url:'/ajax3.html',
+            type:'GET',
+            data:{nid:2},
+            success:function (arg) {
+                $('#content').html(arg)
+
+            }
+        })
+    }
+    function submitJsonp2() {
+        {#jsonp是一种形式  当随机生成script块 在其中执行src属性为：远程URL。添加到head中再移除掉 可以与其他网站交互 执行时需要包裹一个函数名#}
+        {#类似一个规则大家都要遵守这个规则 但是本地要有这个方法的函数#}
+        {#使用的时候不用这么麻烦 jQuery已经帮忙写好了#}
+        var tag = document.createElement('script');
+        tag.src = 'http://127.0.0.1:9000/xiaokai.html';
+        document.head.appendChild(tag);
+        document.head.removeChild(tag);
+    }
+    {#使用Ajax的jsonp的方法 jsonp只有get形式 没有#}
+    function submitJson3() {
+        $.ajax({
+            url:'',
+            type:'GET',
+            dataType:'jsonp',
+            jsonp: 'callback',
+            jsonpCallback:'list',
+
+        })
+    }
+    {#再根据返回数据需要包裹的方法名 构造一个新的函数list#}
+    function list(arg) {
+        console.log(arg)
+    }
+    {#跨域的解决方法一个是jsonp，另一个就是CORS#}
+    {#CORS跨站交流机制。jsonp只能发get来绕过同源策略。cors都可以发。除去数据，还返回特殊的响应头。就没有同源策略了。#}
+</script>
+</body>
+</html>

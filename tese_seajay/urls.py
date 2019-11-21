@@ -42,5 +42,7 @@ urlpatterns = [
     path('upload_ajax.html/', ajax1.upload_ajax),
     path('upload_scan.html/', ajax1.upload_scan),
     path('upload_img.html/', ajax1.upload_img),
+    path('jsonp.html/', ajax1.jsonp),
+    path('ajax3.html/', ajax1.ajax3),
 
 ]
